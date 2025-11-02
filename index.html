@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Лихтина Дарья Алексеевна</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <style>
+        /* Дополнительные инлайновые стили для анимаций */
+        .halloween-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ffd700" d="M12 2C6 2 2 6 2 12s4 10 10 10 10-4 10-10S18 2 12 2zm0 2c4 0 8 4 8 8s-4 8-8 8-8-4-8-8 4-8 8-8z"/><path fill="%234b0082" d="M15 4C9 4 4 9 4 15s5 11 11 11 11-5 11-11S21 4 15 4z"/></svg>'), auto;
+}
+    </style>
+</head>
+<body class="bg-dark halloween-cursor">
+    <div class="spider">
+        <div class="spiderweb"></div>
+        <div class="body">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+        <div class="legs left">
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+        </div>
+        <div class="legs right">
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+        </div>
+    </div>
+    
+    <div class="dance"></div>
+    <!-- Падающие элементы для фона -->
+    <div class="falling-elements-container"></div>
+
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1 spooky-animation glow-text">
+                            <i class="bi bi-emoji-dizzy halloween-icon spin-icon"></i>
+                            Портфолио Лихтиной Дарьи
+                        </h1>
+                        <p class="mb-0 opacity-75 flicker">Студентка-разработчик</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-dark pulse-element">ЭФБО-05-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active  " href="index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " href="pages/projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " href="pages/diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " href="pages/contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container my-4">
+            <!-- Profile Section -->
+            <section class="mb-5 profile-section scroll-reveal">
+                <div class="card shadow-sm breathing-card glass-effect">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center mb-3 mb-md-0">
+                                <img src="images/photo.png" alt="Фото студента" class="img-fluid rounded-circle profile-photo hover-tilt">
+                                <div class="mt-3">
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="card-title h4 text-primary ghost-appear">Лихтина Дарья Алексеевна</h2>
+                                <p class="card-text text-muted mb-2">
+                                    <i class="bi bi-bookmark-check-fill text-primary"></i>
+                                    Студентка группы ЭФБО-05-24
+                                </p>
+                                <p class="card-text">
+                                    Увлекаюсь веб-разработкой, дизайном и созданием интерактивных интерфейсов
+                                </p>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <span class="badge bg-primary">HTML/CSS</span>
+                                    <span class="badge bg-success">JavaScript</span>
+                                    <span class="badge bg-info">Bootstrap</span>
+                                    <span class="badge bg-warning">React</span>
+                                    <span class="badge bg-secondary">UI/UX Design</span>
+                                </div>
+                                <button class="btn btn-primary mt-3 download-btn pulse-element">
+                                    <i class="bi bi-download me-1"></i>Скачать резюме
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="mb-5 skills-section scroll-reveal">
+                <div class="card shadow-sm hover-lift">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0 glow-text">
+                            <i class="bi bi-tools text-primary"></i>
+                            Мои навыки
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>HTML/CSS</span>
+                                        <span class="text-primary">90%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>JavaScript</span>
+                                        <span class="text-primary">80%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>UI/UX Design</span>
+                                        <span class="text-primary">75%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Bootstrap</span>
+                                        <span class="text-primary">85%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-info" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>React</span>
+                                        <span class="text-primary">60%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Git</span>
+                                        <span class="text-primary">70%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-secondary" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="mb-5 projects-section scroll-reveal">
+                <div class="card shadow-sm hover-lift">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0 glow-text">
+                            <i class="bi bi-folder-fill text-primary"></i>
+                            Лучшие проекты
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card h-100 project-card float-element card-3d">
+                                    <img src="images/project1.jpg" class="card-img-top project-image" alt="Личный сайт">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Личный сайт-портфолио</h5>
+                                        <p class="card-text small text-muted">
+                                            Адаптивный сайт-портфолио с хэллоуинской тематикой на HTML, CSS и Bootstrap.
+                                        </p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-primary">HTML</span>
+                                            <span class="badge bg-primary">CSS</span>
+                                            <span class="badge bg-primary">Bootstrap</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary mt-2">Подробнее</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 project-card float-element card-3d">
+                                    <img src="images/project2.jpg" class="card-img-top project-image" alt="Todo приложение">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Todo приложение</h5>
+                                        <p class="card-text small text-muted">
+                                            Интерактивное приложение для управления задачами с использованием JavaScript.
+                                        </p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-success">JavaScript</span>
+                                            <span class="badge bg-success">LocalStorage</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary mt-2">Подробнее</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 project-card float-element card-3d">
+                                    <img src="images/project3.jpg" class="card-img-top project-image" alt="Интернет-магазин">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Интернет-магазин</h5>
+                                        <p class="card-text small text-muted">
+                                            Прототип интернет-магазина с корзиной товаров и системой фильтрации.
+                                        </p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-info">React</span>
+                                            <span class="badge bg-info">API</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary mt-2">Подробнее</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="pages/projects.html" class="btn btn-primary pulse-element">
+                                <i class="bi bi-arrow-right me-1"></i>Смотреть все проекты
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="mb-5 scroll-reveal">
+                <div class="card shadow-sm glass-effect">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0 glow-text">
+                            <i class="bi bi-person-circle text-primary"></i>
+                            Обо мне
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="card-text">
+                                    Привет! Я Дарья, студентка группы ЭФБО-05-24, увлекаюсь веб-разработкой и дизайном. 
+                                    В настоящее время изучаю современные технологии frontend-разработки, включая HTML, CSS, 
+                                    JavaScript и фреймворки такие как React и Bootstrap.
+                                </p>
+                                <p class="card-text">
+                                    Мне нравится создавать красивые и функциональные интерфейсы, которые обеспечивают 
+                                    отличный пользовательский опыт. В свободное время экспериментирую с дизайном, 
+                                    изучаю новые технологии и работаю над личными проектами.
+                                </p>
+                                <div class="mt-3">
+                                    <h5 class="text-primary">Интересы:</h5>
+                                    <div class="d-flex flex-wrap gap-2 mt-2">
+                                        <span class="badge bg-primary">Веб-дизайн</span>
+                                        <span class="badge bg-success">Frontend разработка</span>
+                                        <span class="badge bg-info">UI/UX</span>
+                                        <span class="badge bg-warning">Анимации</span>
+                                        <span class="badge bg-secondary">Графика</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="gradient-border p-3">
+                                    <h5 class="text-primary">Достижения</h5>
+                                    <div class="mt-3">
+                                        <div class="mb-3">
+                                            <i class="bi bi-award-fill text-warning fs-1"></i>
+                                            <p class="mb-0 mt-2">Лучший проект месяца</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <i class="bi bi-lightning-fill text-primary fs-1"></i>
+                                            <p class="mb-0 mt-2">Быстрое обучение</p>
+                                        </div>
+                                        <div>
+                                            <i class="bi bi-heart-fill text-danger fs-1"></i>
+                                            <p class="mb-0 mt-2">Увлеченность работой</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Портфолио Лихтиной Дарьи. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3  ">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none  ">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Анимация появления элементов при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            // Функция для проверки видимости элемента
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Функция для обработки появления элементов
+            function handleScrollAnimation() {
+                const elements = document.querySelectorAll('.scroll-reveal, .profile-section, .skills-section, .projects-section');
+                
+                elements.forEach(element => {
+                    if (isElementInViewport(element)) {
+                        element.classList.add('revealed');
+                    }
+                });
+            }
+            
+            // Обработчик события скролла
+            window.addEventListener('scroll', handleScrollAnimation);
+            
+            // Проверяем элементы при загрузке страницы
+            handleScrollAnimation();
+            
+            // Добавляем случайные анимации при наведении на элементы
+            const interactiveElements = document.querySelectorAll('.card, .btn, .nav-item');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    // Случайным образом добавляем классы анимаций
+                    const animations = [' ', 'pulse-element', 'hover-lift'];
+                    const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+                    
+                    this.classList.add(randomAnimation);
+                    
+                    // Убираем класс через некоторое время
+                    setTimeout(() => {
+                        this.classList.remove(randomAnimation);
+                    }, 1000);
+                });
+            });
+            
+            // Анимация для кнопки "Скачать резюме"
+            const downloadBtn = document.querySelector('.download-btn');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.add('pulse-element');
+                    
+                    // Эффект "исчезания" текста
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="bi bi-download me-1"></i>Скачивание...';
+                    this.classList.add('vanish-text');
+                    
+                    setTimeout(() => {
+                        this.classList.remove('pulse-element', 'vanish-text');
+                        this.innerHTML = originalText;
+                        
+                        // В реальном приложении здесь была бы загрузка файла
+                        alert('Резюме скоро начнет скачиваться!');
+                    }, 2000);
+                });
+            }
+            
+            // Добавляем эффект наведения на карточки проектов
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Функция для создания падающих элементов
+        function createFallingElements() {
+            const container = document.querySelector('.falling-elements-container');
+            const symbols = ['❦', '✢', '✣', '✤', '✥', '✦', '✧', '♱', '♲', '♳', '♴', '♵'];
+            const count = 15; // Количество падающих элементов
+            
+            for (let i = 0; i < count; i++) {
+                const element = document.createElement('div');
+                element.className = 'falling-element';
+                element.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 20 + 's';
+                element.style.animationDuration = (15 + Math.random() * 10) + 's';
+                element.style.fontSize = (10 + Math.random() * 10) + 'px';
+                element.style.color = i % 3 === 0 ? 'var(--primary-color)' : 
+                                     i % 3 === 1 ? 'var(--secondary-color)' : 
+                                     'var(--accent-color)';
+                container.appendChild(element);
+            }
+        }
+
+        // Создаем падающие элементы после загрузки страницы
+        window.addEventListener('load', createFallingElements);
+
+        // Добавляем эффект печатной машинки к заголовкам
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Запускаем эффект печатной машинки для главного заголовка
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainTitle = document.querySelector('.main-title');
+            if (mainTitle) {
+                const text = mainTitle.textContent;
+                typeWriter(mainTitle, text, 150);
+            }
+        });
+
+        // Случайное мерцание элементов
+        function randomFlicker() {
+            const elements = document.querySelectorAll('.flicker');
+            elements.forEach(el => {
+                if (Math.random() > 0.7) {
+                    el.style.opacity = Math.random() * 0.5 + 0.5;
+                }
+            });
+        }
+
+        setInterval(randomFlicker, 300);
+    </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - Лихтина Дарья</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .halloween-cursor {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff7518" d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L9 19v3h6v-3h-1.69C18.16 18.67 21 15.17 21 11a9 9 0 0 0-9-9m0 2a7 7 0 0 1 7 7c0 3.1-2.03 5.74-4.94 6.66l.94.34V20h-6v-2l.94-.34A7.008 7.008 0 0 1 5 11a7 7 0 0 1 7-7m-3 8a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1m6 0a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1z"/></svg>'), auto;
+        }
+    </style>
+</head>
+<body class="bg-dark halloween-cursor">
+    <!-- Падающие элементы для фона -->
+    <div class="falling-elements-container"></div>
+
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1 spooky-animation glow-text">
+                            <i class="bi bi-folder halloween-icon"></i>
+                            Мои проекты
+                        </h1>
+                        <p class="mb-0 opacity-75 flicker">Коллекция учебных и личных работ</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-dark pulse-element">ЭФБО-05-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active shake-element" href="projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container my-4">
+            <!-- Projects Filter -->
+            <section class="mb-4 scroll-reveal">
+                <div class="card shadow-sm glass-effect">
+                    <div class="card-body">
+                        <h2 class="h4 text-primary mb-3 glow-text">Мои проекты</h2>
+                        <div class="project-filter d-flex flex-wrap gap-2">
+                            <button class="btn btn-outline-primary active pulse-element" data-filter="all">Все</button>
+                            <button class="btn btn-outline-primary shake-element" data-filter="html">HTML/CSS</button>
+                            <button class="btn btn-outline-primary shake-element" data-filter="js">JavaScript</button>
+                            <button class="btn btn-outline-primary shake-element" data-filter="react">React</button>
+                            <button class="btn btn-outline-primary shake-element" data-filter="design">Дизайн</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Grid -->
+            <section class="mb-5">
+                <div class="row g-4" id="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="col-md-6 col-lg-4 scroll-reveal" data-category="html">
+                        <div class="card h-100 project-card float-element card-3d" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                            <img src="../images/project1.jpg" class="card-img-top project-image" alt="Личный сайт">
+                            <div class="card-body">
+                                <h5 class="card-title">Личный сайт-портфолио</h5>
+                                <p class="card-text small text-muted">
+                                    Адаптивный сайт-портфолио с хэллоуинской тематикой на HTML, CSS и Bootstrap.
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-primary ">HTML</span>
+                                    <span class="badge bg-primary ">CSS</span>
+                                    <span class="badge bg-primary ">Bootstrap</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="col-md-6 col-lg-4 scroll-reveal" data-category="js">
+                        <div class="card h-100 project-card float-element card-3d" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                            <img src="../images/project2.jpg" class="card-img-top project-image" alt="Todo приложение">
+                            <div class="card-body">
+                                <h5 class="card-title">Todo приложение</h5>
+                                <p class="card-text small text-muted">
+                                    Интерактивное приложение для управления задачами с использованием JavaScript.
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-success skill-icon">JavaScript</span>
+                                    <span class="badge bg-success skill-icon">LocalStorage</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col-md-6 col-lg-4 scroll-reveal" data-category="react">
+                        <div class="card h-100 project-card float-element card-3d" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                            <img src="../images/project3.jpg" class="card-img-top project-image" alt="Интернет-магазин">
+                            <div class="card-body">
+                                <h5 class="card-title">Интернет-магазин</h5>
+                                <p class="card-text small text-muted">
+                                    Прототип интернет-магазина с корзиной товаров и системой фильтрации.
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-info skill-icon">React</span>
+                                    <span class="badge bg-info skill-icon">API</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="col-md-6 col-lg-4 scroll-reveal" data-category="html">
+                        <div class="card h-100 project-card float-element card-3d" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                            <img src="../images/project4.jpg" class="card-img-top project-image" alt="Блог платформа">
+                            <div class="card-body">
+                                <h5 class="card-title">Блог платформа</h5>
+                                <p class="card-text small text-muted">
+                                    Платформа для ведения блога с системой комментариев и тегов.
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-primary skill-icon">HTML</span>
+                                    <span class="badge bg-primary skill-icon">CSS</span>
+                                    <span class="badge bg-success skill-icon">JavaScript</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="col-md-6 col-lg-4 scroll-reveal" data-category="js">
+                        <div class="card h-100 project-card float-element card-3d" data-bs-toggle="modal" data-bs-target="#projectModal5">
+                            <img src="../images/project5.jpg" class="card-img-top project-image" alt="Игра в памяти">
+                            <div class="card-body">
+                                <h5 class="card-title">Игра на память</h5>
+                                <p class="card-text small text-muted">
+                                    Карточная игра на запоминание с системой подсчета очков и таймером.
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-success skill-icon">JavaScript</span>
+                                    <span class="badge bg-warning skill-icon">Canvas</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="col-md-6 col-lg-4 scroll-reveal" data-category="design">
+                        <div class="card h-100 project-card float-element card-3d" data-bs-toggle="modal" data-bs-target="#projectModal6">
+                            <img src="../images/project6.jpg" class="card-img-top project-image" alt="UI/UX Дизайн">
+                            <div class="card-body">
+                                <h5 class="card-title">UI/UX Дизайн</h5>
+                                <p class="card-text small text-muted">
+                                    Коллекция дизайн-макетов для мобильных приложений и веб-сайтов.
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-secondary skill-icon">Figma</span>
+                                    <span class="badge bg-secondary skill-icon">Adobe XD</span>
+                                    <span class="badge bg-secondary skill-icon">Photoshop</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                    <span class="twinkle">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2024 Портфолио Лихтиной Дарьи. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3 shake-element">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none shake-element">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Project Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h5 class="modal-title glow-text" id="projectModalLabel1">Личный сайт-портфолио</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../images/project1.jpg" class="img-fluid mb-3 rounded hover-tilt" alt="Личный сайт">
+                    <p>Полнофункциональный личный сайт-портфолио с хэллоуинской тематикой, разработанный с использованием HTML5, CSS3 и Bootstrap 5.</p>
+                    <p><strong>Основные функции:</strong></p>
+                    <ul>
+                        <li>Адаптивный дизайн для всех устройств</li>
+                        <li>Система навигации между страницами</li>
+                        <li>Галерея проектов с фильтрацией</li>
+                        <li>Контактная форма с валидацией</li>
+                        <li>Интерактивные анимации и эффекты</li>
+                    </ul>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" class="btn btn-primary pulse-element">Живая версия</a>
+                        <a href="#" class="btn btn-outline-primary shake-element">Исходный код</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h5 class="modal-title glow-text" id="projectModalLabel2">Todo приложение</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../images/project2.jpg" class="img-fluid mb-3 rounded hover-tilt" alt="Todo приложение">
+                    <p>Интерактивное приложение для управления задачами с использованием чистого JavaScript и LocalStorage для сохранения данных.</p>
+                    <p><strong>Основные функции:</strong></p>
+                    <ul>
+                        <li>Добавление, редактирование и удаление задач</li>
+                        <li>Отметка выполненных задач</li>
+                        <li>Фильтрация задач по статусу</li>
+                        <li>Сохранение данных в LocalStorage</li>
+                        <li>Адаптивный интерфейс</li>
+                    </ul>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" class="btn btn-primary pulse-element">Живая версия</a>
+                        <a href="#" class="btn btn-outline-primary shake-element">Исходный код</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Добавьте остальные модальные окна по аналогии -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Анимация появления элементов при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            // Функция для проверки видимости элемента
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Функция для обработки появления элементов
+            function handleScrollAnimation() {
+                const elements = document.querySelectorAll('.scroll-reveal');
+                
+                elements.forEach(element => {
+                    if (isElementInViewport(element)) {
+                        element.classList.add('revealed');
+                    }
+                });
+            }
+            
+            // Обработчик события скролла
+            window.addEventListener('scroll', handleScrollAnimation);
+            
+            // Проверяем элементы при загрузке страницы
+            handleScrollAnimation();
+            
+            // Фильтрация проектов
+            const filterButtons = document.querySelectorAll('.project-filter .btn');
+            const projects = document.querySelectorAll('#projects-grid > div');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Убираем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    projects.forEach(project => {
+                        if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                            project.style.display = 'block';
+                            // Добавляем анимацию появления
+                            project.classList.add('ghost-appear');
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Добавляем эффект наведения на карточки проектов
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Функция для создания падающих элементов
+        function createFallingElements() {
+            const container = document.querySelector('.falling-elements-container');
+            const symbols = ['❦', '✢', '✣', '✤', '✥', '✦', '✧', '♱', '♲', '♳', '♴', '♵'];
+            const count = 15;
+            
+            for (let i = 0; i < count; i++) {
+                const element = document.createElement('div');
+                element.className = 'falling-element';
+                element.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 20 + 's';
+                element.style.animationDuration = (15 + Math.random() * 10) + 's';
+                element.style.fontSize = (10 + Math.random() * 10) + 'px';
+                element.style.color = i % 3 === 0 ? 'var(--primary-color)' : 
+                                     i % 3 === 1 ? 'var(--secondary-color)' : 
+                                     'var(--accent-color)';
+                container.appendChild(element);
+            }
+        }
+
+        // Создаем падающие элементы после загрузки страницы
+        window.addEventListener('load', createFallingElements);
+
+        // Случайное мерцание элементов
+        function randomFlicker() {
+            const elements = document.querySelectorAll('.flicker');
+            elements.forEach(el => {
+                if (Math.random() > 0.7) {
+                    el.style.opacity = Math.random() * 0.5 + 0.5;
+                }
+            });
+        }
+
+        setInterval(randomFlicker, 300);
+    </script>
+</body>
+</html>

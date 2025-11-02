@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный дневник - Лихтина Дарья</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .halloween-cursor {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff7518" d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L9 19v3h6v-3h-1.69C18.16 18.67 21 15.17 21 11a9 9 0 0 0-9-9m0 2a7 7 0 0 1 7 7c0 3.1-2.03 5.74-4.94 6.66l.94.34V20h-6v-2l.94-.34A7.008 7.008 0 0 1 5 11a7 7 0 0 1 7-7m-3 8a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1m6 0a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1z"/></svg>'), auto;
+        }
+    </style>
+</head>
+<body class="bg-dark halloween-cursor">
+    <!-- Падающие элементы для фона -->
+    <div class="falling-elements-container"></div>
+
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1 spooky-animation glow-text">
+                            <i class="bi bi-journal halloween-icon"></i>
+                            Учебный дневник
+                        </h1>
+                        <p class="mb-0 opacity-75 flicker">Отслеживание образовательного прогресса</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-dark pulse-element">ЭФБО-05-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active shake-element" href="diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container my-4">
+            <!-- Progress Section -->
+            <section class="mb-5 scroll-reveal">
+                <div class="card shadow-sm glass-effect">
+                    <div class="card-header bg-light">
+                        <h2 class="card-title h5 mb-0 glow-text">
+                            <i class="bi bi-graph-up text-primary"></i>
+                            Мой учебный прогресс
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="diary-list">
+                                    <div class="diary-item completed ghost-appear">
+                                        <h5 class="text-primary">15 дек - Верстка макета сайта</h5>
+                                        <p class="text-muted">Завершена верстка главной страницы портфолио с использованием Bootstrap и хэллоуинской тематики</p>
+                                        <span class="badge bg-success pulse-element">Завершено</span>
+                                        <div class="mt-2">
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="diary-item completed ghost-appear">
+                                        <h5 class="text-primary">10 дек - JavaScript основы</h5>
+                                        <p class="text-muted">Изучены основы JavaScript: переменные, функции, DOM-манипуляции, обработка событий</p>
+                                        <span class="badge bg-success pulse-element">Завершено</span>
+                                        <div class="mt-2">
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="diary-item in-progress ghost-appear">
+                                        <h5 class="text-primary">05 дек - Работа с формами</h5>
+                                        <p class="text-muted">Создание и валидация форм, работа с модальными окнами, обработка данных пользователя</p>
+                                        <span class="badge bg-warning flicker">В процессе</span>
+                                        <div class="mt-2">
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="diary-item in-progress ghost-appear">
+                                        <h5 class="text-primary">01 дек - Адаптивный дизайн</h5>
+                                        <p class="text-muted">Изучение медиа-запросов и создание адаптивных интерфейсов для разных устройств</p>
+                                        <span class="badge bg-warning flicker">В процессе</span>
+                                        <div class="mt-2">
+                                            <span class="twinkle">★</span>
+                                            <span class="twinkle">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="diary-item ghost-appear">
+                                        <h5 class="text-primary">25 ноя - React основы</h5>
+                                        <p class="text-muted">Предстоящее изучение компонентов React и их жизненного цикла, создание SPA</p>
+                                        <span class="badge bg-secondary">Запланировано</span>
+                                        <div class="mt-2">
+                                            <span class="twinkle">★</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card breathing-card">
+                                    <div class="card-header">
+                                        <h5 class="card-title mb-0 glow-text">Текущие курсы</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span>Веб-разработка</span>
+                                                <span class="text-primary">90%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-primary" style="width: 90%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span>JavaScript</span>
+                                                <span class="text-primary">70%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-success" style="width: 70%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span>React</span>
+                                                <span class="text-primary">50%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-info" style="width: 50%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span>Bootstrap</span>
+                                                <span class="text-primary">85%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" style="width: 85%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span>UI/UX Design</span>
+                                                <span class="text-primary">75%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-secondary" style="width: 75%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button class="btn btn-primary pulse-element" data-bs-toggle="modal" data-bs-target="#addEntryModal">
+                                <i class="bi bi-plus-circle me-1"></i>Добавить запись
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="mb-5 scroll-reveal">
+                <div class="card shadow-sm glass-effect">
+                    <div class="card-header bg-light">
+                        <h2 class="card-title h5 mb-0 glow-text">
+                            <i class="bi bi-bar-chart text-primary"></i>
+                            Статистика обучения
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row text-center">
+                            <div class="col-md-3 mb-3">
+                                <div class="card bg-secondary hover-lift">
+                                    <div class="card-body">
+                                        <h3 class="text-primary flicker">42</h3>
+                                        <p class="mb-0">Часов изучено</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="card bg-secondary hover-lift">
+                                    <div class="card-body">
+                                        <h3 class="text-success flicker">18</h3>
+                                        <p class="mb-0">Задач завершено</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="card bg-secondary hover-lift">
+                                    <div class="card-body">
+                                        <h3 class="text-warning flicker">6</h3>
+                                        <p class="mb-0">Проектов создано</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="card bg-secondary hover-lift">
+                                    <div class="card-body">
+                                        <h3 class="text-info flicker">5</h3>
+                                        <p class="mb-0">Курсов пройдено</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Goals Section -->
+            <section class="mb-5 scroll-reveal">
+                <div class="card shadow-sm glass-effect">
+                    <div class="card-header bg-light">
+                        <h2 class="card-title h5 mb-0 glow-text">
+                            <i class="bi bi-flag text-primary"></i>
+                            Учебные цели
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <h5 class="text-primary">Краткосрочные цели (1 месяц)</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-check-circle text-success me-2"></i>
+                                            Завершить изучение JavaScript основ
+                                        </li>
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-check-circle text-success me-2"></i>
+                                            Создать адаптивный сайт-портфолио
+                                        </li>
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-circle text-warning me-2 flicker"></i>
+                                            Изучить основы React
+                                        </li>
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-circle text-warning me-2 flicker"></i>
+                                            Разработать Todo приложение
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <h5 class="text-primary">Долгосрочные цели (6 месяцев)</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-circle text-secondary me-2"></i>
+                                            Освоить фреймворк React
+                                        </li>
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-circle text-secondary me-2"></i>
+                                            Изучить Node.js и Express
+                                        </li>
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-circle text-secondary me-2"></i>
+                                            Создать полноценное веб-приложение
+                                        </li>
+                                        <li class="list-group-item bg-transparent text-light">
+                                            <i class="bi bi-circle text-secondary me-2"></i>
+                                            Пройти стажировку в IT-компании
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2024 Портфолио Лихтиной Дарьи. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3 shake-element">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none shake-element">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Add Entry Modal -->
+    <div class="modal fade" id="addEntryModal" tabindex="-1" aria-labelledby="addEntryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h5 class="modal-title glow-text" id="addEntryModalLabel">Добавить запись в дневник</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="diaryForm">
+                        <div class="mb-3">
+                            <label for="entryDate" class="form-label">Дата</label>
+                            <input type="date" class="form-control" id="entryDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryTitle" class="form-label">Заголовок</label>
+                            <input type="text" class="form-control" id="entryTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryDescription" class="form-label">Описание</label>
+                            <textarea class="form-control" id="entryDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryStatus" class="form-label">Статус</label>
+                            <select class="form-select" id="entryStatus" required>
+                                <option value="">Выберите статус</option>
+                                <option value="completed">Завершено</option>
+                                <option value="in-progress">В процессе</option>
+                                <option value="planned">Запланировано</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary shake-element" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary pulse-element" onclick="addDiaryEntry()">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Анимация появления элементов при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            // Функция для проверки видимости элемента
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Функция для обработки появления элементов
+            function handleScrollAnimation() {
+                const elements = document.querySelectorAll('.scroll-reveal');
+                
+                elements.forEach(element => {
+                    if (isElementInViewport(element)) {
+                        element.classList.add('revealed');
+                    }
+                });
+            }
+            
+            // Обработчик события скролла
+            window.addEventListener('scroll', handleScrollAnimation);
+            
+            // Проверяем элементы при загрузке страницы
+            handleScrollAnimation();
+        });
+
+        function addDiaryEntry() {
+            const date = document.getElementById('entryDate').value;
+            const title = document.getElementById('entryTitle').value;
+            const description = document.getElementById('entryDescription').value;
+            const status = document.getElementById('entryStatus').value;
+            
+            if (date && title && description && status) {
+                // В реальном приложении здесь был бы AJAX-запрос к серверу
+                alert('Запись успешно добавлена!');
+                document.getElementById('diaryForm').reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('addEntryModal'));
+                modal.hide();
+            } else {
+                alert('Пожалуйста, заполните все поля!');
+            }
+        }
+
+        // Функция для создания падающих элементов
+        function createFallingElements() {
+            const container = document.querySelector('.falling-elements-container');
+            const symbols = ['❦', '✢', '✣', '✤', '✥', '✦', '✧', '♱', '♲', '♳', '♴', '♵'];
+            const count = 15;
+            
+            for (let i = 0; i < count; i++) {
+                const element = document.createElement('div');
+                element.className = 'falling-element';
+                element.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 20 + 's';
+                element.style.animationDuration = (15 + Math.random() * 10) + 's';
+                element.style.fontSize = (10 + Math.random() * 10) + 'px';
+                element.style.color = i % 3 === 0 ? 'var(--primary-color)' : 
+                                     i % 3 === 1 ? 'var(--secondary-color)' : 
+                                     'var(--accent-color)';
+                container.appendChild(element);
+            }
+        }
+
+        // Создаем падающие элементы после загрузки страницы
+        window.addEventListener('load', createFallingElements);
+
+        // Случайное мерцание элементов
+        function randomFlicker() {
+            const elements = document.querySelectorAll('.flicker');
+            elements.forEach(el => {
+                if (Math.random() > 0.7) {
+                    el.style.opacity = Math.random() * 0.5 + 0.5;
+                }
+            });
+        }
+
+        setInterval(randomFlicker, 300);
+    </script>
+</body>
+</html>

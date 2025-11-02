@@ -1,0 +1,1206 @@
+/* === CSS ПЕРЕМЕННЫЕ ДЛЯ ХЭЛЛОУИНСКОЙ ТЕМЫ === */
+:root {
+    /* Хэллоуинская цветовая палитра */
+    --primary-color: #ff7518; /* оранжевый */
+    --secondary-color: #4b0082; /* фиолетовый */
+    --accent-color: #ff4500; /* красно-оранжевый */
+    --dark-color: #1a1a1a;
+    --darker-color: #0d0d0d;
+    --light-color: #f8f9fa;
+    --success-color: #32cd32; /* зеленый для Хэллоуина */
+    --text-color: #f8f8f8; /* Более светлый текст для лучшей читаемости */
+    --text-muted: #d0d0d0; /* Более светлый muted текст */
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --transition: all 0.3s ease;
+}
+
+/* === БАЗОВЫЕ СТИЛИ === */
+body {
+    background-color: var(--darker-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* МЕСТО ДЛЯ ФОНОВОЙ КАРТИНКИ - раскомментируйте и укажите путь к изображению */
+    /* background-image: url('../images/halloween-bg.jpg'); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    
+}
+
+html * {
+      color: white !important;
+    }
+
+/* Затемнение фона для лучшей читаемости текста */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.85); /* Затемнение для контраста с текстом */
+    z-index: -1;
+}
+
+/* === КАСТОМНЫЕ СТИЛИ ДЛЯ BOOTSTRAP === */
+
+/* Цвета фона */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
+}
+
+/* Цвета текста */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important; /* Переопределяем Bootstrap muted цвет */
+}
+
+/* Кнопки */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Карточки */
+.card {
+    background-color: var(--dark-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    /* МЕСТО ДЛЯ ФОНА КАРТОЧЕК - раскомментируйте для текстуры */
+    /* background-image: url('../images/card-texture.png'); */
+    background-blend-mode: overlay;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 117, 24, 0.3);
+}
+
+.card-header {
+    background-color: rgba(75, 0, 130, 0.3) !important;
+    border-bottom: 1px solid var(--primary-color) !important;
+    /* МЕСТО ДЛЯ ТЕКСТУРЫ ЗАГОЛОВКА КАРТОЧКИ */
+    /* background-image: url('../images/header-texture.png'); */
+    background-blend-mode: overlay;
+}
+
+/* Прогресс-бары */
+.progress {
+    background-color: var(--darker-color);
+    /* МЕСТО ДЛЯ ТЕКСТУРЫ ПРОГРЕСС-БАРА */
+    /* background-image: url('../images/progress-bg.png'); */
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    /* МЕСТО ДЛЯ ТЕКСТУРЫ ЗАПОЛНЕННОЙ ЧАСТИ ПРОГРЕСС-БАРА */
+    /* background-image: url('../images/progress-fill.png'); */
+    background-size: 20px 100%;
+    animation: progress-animation 1s infinite linear;
+}
+
+@keyframes progress-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 0; }
+}
+
+/* Бейджи */
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.badge.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.badge.bg-info {
+    background-color: var(--secondary-color) !important;
+}
+
+.badge.bg-warning {
+    background-color: var(--accent-color) !important;
+}
+
+/* Навигация */
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--text-color);
+    transition: var(--transition);
+    /* МЕСТО ДЛЯ ФОНА ПУНКТОВ НАВИГАЦИИ */
+    /* background-image: url('../images/nav-item-bg.png'); */
+    background-size: cover;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    /* МЕСТО ДЛЯ ИЗМЕНЕНИЯ ФОНА ПРИ НАВЕДЕНИИ */
+    /* background-image: url('../images/nav-item-hover.png'); */
+}
+
+/* === КАСТОМНЫЕ КОМПОНЕНТЫ === */
+
+/* Иконки в хэллоуинском стиле */
+.halloween-icon {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* Футер */
+.footer {
+    background-color: var(--dark-color) !important;
+    border-top: 2px solid var(--primary-color);
+    padding: 30px 0;
+    margin-top: 50px;
+    /* МЕСТО ДЛЯ ФОНА ФУТЕРА */
+    /* background-image: url('../images/footer-bg.jpg'); */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Фото профиля */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--primary-color) !important;
+    /* МЕСТО ДЛЯ РАМКИ ФОТО ПРОФИЛЯ */
+    /* box-shadow: 0 0 0 5px var(--primary-color), 0 0 20px rgba(255, 117, 24, 0.7); */
+}
+
+/* Изображения проектов */
+.project-image {
+    height: 150px;
+    object-fit: cover;
+    /* МЕСТО ДЛЯ РАМКИ ИЗОБРАЖЕНИЙ ПРОЕКТОВ */
+    /* border: 2px solid var(--primary-color); */
+}
+
+/* Карточки проектов */
+.project-card {
+    transition: var(--transition);
+    /* МЕСТО ДЛЯ ФОНА КАРТОЧЕК ПРОЕКТОВ */
+    /* background-image: url('../images/project-card-bg.jpg'); */
+    background-size: cover;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(255, 117, 24, 0.4);
+}
+
+/* === АНИМАЦИИ === */
+
+/* Анимация для хэллоуинского эффекта */
+@keyframes spooky {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.spooky-animation {
+    animation: spooky 3s infinite;
+}
+
+/* Анимация мерцания для хэллоуинской атмосферы */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.flicker {
+    animation: flicker 2s infinite;
+}
+
+/* === СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА === */
+.modal-content {
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    /* МЕСТО ДЛЯ ФОНА МОДАЛЬНЫХ ОКОН */
+    /* background-image: url('../images/modal-bg.jpg'); */
+    background-size: cover;
+}
+
+.modal-header {
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid var(--primary-color);
+    /* МЕСТО ДЛЯ ТЕКСТУРЫ ЗАГОЛОВКА МОДАЛЬНОГО ОКНА */
+    /* background-image: url('../images/modal-header.jpg'); */
+    background-blend-mode: overlay;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--primary-color);
+}
+
+.form-control {
+    background-color: var(--darker-color);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+    /* МЕСТО ДЛЯ ФОНА ПОЛЕЙ ФОРМЫ */
+    /* background-image: url('../images/input-bg.png'); */
+}
+
+.form-control:focus {
+    background-color: var(--darker-color);
+    border-color: var(--accent-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 117, 24, 0.25);
+}
+
+/* === СТИЛИ ДЛЯ СТРАНИЦЫ ПРОЕКТОВ === */
+.project-filter .btn {
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    transition: var(--transition);
+    /* МЕСТО ДЛЯ ФОНА КНОПОК ФИЛЬТРА */
+    /* background-image: url('../images/filter-btn-bg.png'); */
+}
+
+.project-filter .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+.project-filter .btn.active {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+/* === СТИЛИ ДЛЯ УЧЕБНОГО ДНЕВНИКА === */
+.diary-item {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+    /* МЕСТО ДЛЯ ФОНА ЭЛЕМЕНТОВ ДНЕВНИКА */
+    /* background-image: url('../images/diary-item-bg.png'); */
+    background-size: 100% 100%;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.diary-item:hover {
+    transform: translateX(5px);
+}
+
+.diary-item.completed {
+    border-left-color: var(--success-color);
+    /* МЕСТО ДЛЯ ФОНА ЗАВЕРШЕННЫХ ЭЛЕМЕНТОВ */
+    /* background-image: url('../images/diary-completed-bg.png'); */
+}
+
+.diary-item.in-progress {
+    border-left-color: var(--accent-color);
+    /* МЕСТО ДЛЯ ФОНА ЭЛЕМЕНТОВ В ПРОЦЕССЕ */
+    /* background-image: url('../images/diary-progress-bg.png'); */
+}
+
+.diary-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* === СТИЛИ ДЛЯ КОНТАКТНОЙ ФОРМЫ === */
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Декоративные элементы для хэллоуина */
+.halloween-decoration {
+    position: relative;
+}
+
+/* МЕСТО ДЛЯ ДЕКОРАТИВНЫХ ЭЛЕМЕНТОВ - раскомментируйте для добавления */
+/* 
+.halloween-decoration::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/pumpkin-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+*/
+
+/* Анимации для интерактивности */
+.btn, .card, .nav-link {
+    transition: var(--transition);
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ МЕСТА ДЛЯ КАРТИНОК === */
+
+/* Фон для секций */
+.section-bg {
+    /* МЕСТО ДЛЯ ФОНА ОТДЕЛЬНЫХ СЕКЦИЙ */
+    /* background-image: url('../images/section-bg.jpg'); */
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    position: relative;
+}
+
+.section-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.7);
+    z-index: 0;
+}
+
+.section-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Декоративные разделители */
+.section-divider {
+    height: 50px;
+    /* МЕСТО ДЛЯ ДЕКОРАТИВНОГО РАЗДЕЛИТЕЛЯ СЕКЦИЙ */
+    /* background-image: url('../images/section-divider.png'); */
+    background-size: cover;
+    background-position: center;
+    margin: 40px 0;
+}
+
+/* Иконки для списка контактов */
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    /* МЕСТО ДЛЯ КАСТОМНЫХ ИКОНОК КОНТАКТОВ */
+    /* background-image: url('../images/contact-icons-sprite.png'); */
+    background-size: 96px 24px; /* Для спрайта из 4 иконок */
+    display: inline-block;
+}
+
+/* Фон для навигации */
+.navbar {
+    /* МЕСТО ДЛЯ ФОНА НАВИГАЦИИ */
+    /* background-image: url('../images/nav-bg.jpg'); */
+    background-size: cover;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .project-filter {
+        justify-content: center;
+    }
+    
+    .diary-item {
+        padding-left: 10px;
+    }
+    
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer .text-md-end {
+        text-align: left !important;
+        margin-top: 15px;
+    }
+    
+    body::before {
+        background: rgba(13, 13, 13, 0.9); /* Более темный фон на мобильных для лучшей читаемости */
+    }
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ АНИМАЦИИ И ЭФФЕКТЫ === */
+
+/* 1. Анимация падающих листьев/призраков для фона */
+@keyframes falling {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.falling-element {
+    position: fixed;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    /* МЕСТО ДЛЯ ИЗОБРАЖЕНИЯ ПАДАЮЩЕГО ЭЛЕМЕНТА */
+    /* background-image: url('../images/falling-ghost.png'); */
+    animation: falling 15s linear infinite;
+}
+
+/* Случайные позиции и задержки для падающих элементов */
+.falling-element:nth-child(1) { left: 10%; animation-delay: 0s; }
+.falling-element:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 12s; }
+.falling-element:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 18s; }
+.falling-element:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 14s; }
+.falling-element:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 16s; }
+.falling-element:nth-child(6) { left: 60%; animation-delay: 10s; animation-duration: 13s; }
+.falling-element:nth-child(7) { left: 70%; animation-delay: 12s; animation-duration: 17s; }
+.falling-element:nth-child(8) { left: 80%; animation-delay: 14s; animation-duration: 15s; }
+.falling-element:nth-child(9) { left: 90%; animation-delay: 16s; animation-duration: 11s; }
+
+/* 2. Анимация свечения для заголовков */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px var(--primary-color), 
+                     0 0 10px var(--primary-color), 
+                     0 0 15px var(--primary-color),
+                     0 0 20px var(--accent-color);
+    }
+    50% {
+        text-shadow: 0 0 10px var(--accent-color), 
+                     0 0 20px var(--accent-color), 
+                     0 0 30px var(--accent-color),
+                     0 0 40px var(--primary-color);
+    }
+}
+
+.glow-text {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* 3. Анимация "дыхания" для карточек */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(255, 117, 24, 0.3);
+    }
+}
+
+.breathing-card {
+    animation: breathe 4s ease-in-out infinite;
+}
+
+/* 4. Анимация появления элементов при скролле */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 5. Анимация пульсации для кнопок и важных элементов */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 117, 24, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 117, 24, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 117, 24, 0);
+    }
+}
+
+.pulse-element {
+    animation: pulse 2s infinite;
+}
+
+/* 6. Анимация "призрачного" появления */
+@keyframes ghostAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.9);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(0) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.ghost-appear {
+    animation: ghostAppear 0.8s ease-out forwards;
+}
+
+/* 7. Анимация вращения для иконок */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-icon {
+    animation: spin 3s linear infinite;
+}
+
+.spin-icon:hover {
+    animation-duration: 1s;
+}
+
+/* 8. Анимация "дрожания" для хэллоуинского эффекта */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+
+/* 9. Анимация переливания цвета */
+@keyframes colorShift {
+    0% {
+        background-color: var(--primary-color);
+    }
+    25% {
+        background-color: var(--accent-color);
+    }
+    50% {
+        background-color: var(--secondary-color);
+    }
+    75% {
+        background-color: var(--success-color);
+    }
+    100% {
+        background-color: var(--primary-color);
+    }
+}
+
+.color-shift {
+    animation: colorShift 5s infinite;
+}
+
+/* 10. Анимация "исчезающего текста" */
+@keyframes vanish {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.vanish-text {
+    animation: vanish 3s ease-in-out infinite alternate;
+}
+
+/* 11. Стили для интерактивных элементов с 3D-эффектом */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.5s ease;
+}
+
+.card-3d:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateY(-5px);
+}
+
+/* 12. Анимация "летающих" элементов */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-element {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 13. Эффект типа на печатной машинке */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.typewriter-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary-color);
+    animation: typewriter 3s steps(40) 1s both, blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--primary-color);
+    }
+}
+
+/* 14. Анимация "мерцающих звезд" на фоне */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.twinkle {
+    animation: twinkle 2s infinite;
+}
+
+.twinkle:nth-child(2n) {
+    animation-delay: 0.5s;
+}
+
+.twinkle:nth-child(3n) {
+    animation-delay: 1s;
+}
+
+/* 15. Эффект параллакса для фоновых элементов */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* === ПРИМЕНЕНИЕ АНИМАЦИЙ К КОНКРЕТНЫМ ЭЛЕМЕНТАМ === */
+
+/* Применяем анимацию появления к основным секциям */
+.profile-section, .skills-section, .projects-section, .diary-section, .contacts-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.profile-section.revealed, .skills-section.revealed, 
+.projects-section.revealed, .diary-section.revealed, 
+.contacts-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Добавляем анимацию пульсации к кнопке "Скачать резюме" */
+.download-btn {
+    animation: pulse 2s infinite;
+}
+
+/* Добавляем анимацию свечения к основному заголовку */
+.main-title {
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* Добавляем анимацию дыхания к карточке профиля */
+.profile-card {
+    animation: breathe 5s ease-in-out infinite;
+}
+
+
+/* Добавляем эффект дрожания к элементам навигации при наведении */
+.nav-item:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Добавляем анимацию плавания к карточкам проектов */
+.project-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+.project-card:hover {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Добавляем эффект печатной машинки к заголовку "Обо мне" */
+.about-title {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary-color);
+    animation: typewriter 4s steps(40) 1s both, blink 0.75s step-end infinite;
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ УЛУЧШЕНИЯ ВИЗУАЛА === */
+
+/* Градиентные границы для карточек */
+.gradient-border {
+    position: relative;
+    background: var(--dark-color);
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    border-radius: 12px;
+    z-index: -1;
+    animation: colorShift 5s infinite;
+}
+
+/* Неоновый эффект для текста */
+.neon-text {
+    color: #fff;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px var(--primary-color),
+        0 0 30px var(--primary-color),
+        0 0 40px var(--primary-color);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Эффект стекла для карточек */
+.glass-effect {
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 117, 24, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Анимированный градиент для фона */
+.animated-bg {
+    background: linear-gradient(-45deg, var(--darker-color), var(--dark-color), var(--secondary-color), var(--primary-color));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Стили для ховер-эффектов с трансформацией */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Эффект наклонения при наведении */
+.hover-tilt {
+    transition: transform 0.3s ease;
+}
+
+.hover-tilt:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ АНИМАЦИЙ === */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ АНИМАЦИИ И ЭФФЕКТЫ === */
+
+/* Анимация падающих элементов */
+@keyframes falling {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.falling-element {
+    position: fixed;
+    top: 0;
+    font-size: 16px;
+    z-index: -1;
+    pointer-events: none;
+    animation: falling 15s linear infinite;
+}
+
+/* Стеклянный эффект */
+.glass-effect {
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 117, 24, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Градиентная рамка */
+.gradient-border {
+    position: relative;
+    background: var(--dark-color);
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    border-radius: 12px;
+    z-index: -1;
+    animation: colorShift 5s infinite;
+}
+
+@keyframes colorShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Эффект наклонения при наведении */
+.hover-tilt {
+    transition: transform 0.3s ease;
+}
+
+.hover-tilt:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+/* Подъем при наведении */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D эффект для карточек */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.5s ease;
+}
+
+.card-3d:hover {
+    transform: rotateY(5deg) rotateX(2deg) translateY(-5px);
+}
+
+/* Адаптивность для анимаций */
+@media (max-width: 768px) {
+    .falling-element {
+        display: none; /* Скрываем падающие элементы на мобильных */
+    }
+    
+    .card-3d:hover {
+        transform: none; /* Отключаем 3D эффект на мобильных */
+    }
+    
+    .hover-lift:hover {
+        transform: translateY(-5px); /* Уменьшаем подъем на мобильных */
+    }
+}
+
+/* Отключение анимаций для пользователей, которые предпочитают их уменьшение */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.dance {
+  background-image: url("https://upforme.ru/uploads/0007/e3/f7/6822/157112.png"); /*если хотите перекрасить скелета, надо перекрасить картинку в фотошопе, например через фильтры*/
+  background-repeat:repeat;
+  width:100%; /*ширина*/
+  height: 71px; /*высота*/
+  bottom: 0px;
+  opacity: 20%;
+position: absolute; /* Заменяем на fixed, если хотите чтобы тыква осталась на экране при прокрутки страницы */
+  animation: lovelydance 5.5s steps(1) infinite;
+}
+
+@keyframes lovelydance {
+  0% {
+    background-position: 12px -233px;
+  }
+  10% {
+    background-position: 0 -311px;
+  }
+  20% {
+    background-position: 12px -467px;
+  }
+  30% {
+    background-position: 7px -542px;
+  }
+  40% {
+    background-position: 5px -622px;
+  }
+  50% {
+    background-position: 18px -700px;
+  }
+  60% {
+    background-position: 12px -775px;
+  }
+  70% {
+    background-position: 26px -854px;
+  }
+  80% {
+    background-position: 14px -921px;
+  }
+  90% {
+    background-position: 14px -1000px;
+  }
+  100% {
+    background-position: 10px -1080px;
+  }
+}
+
+ /* Милый анимированный паучок*/
+   
+ /* Bonus */
+html:hover .spider {
+    top: -120%; 
+}
+
+.spider {
+    z-index: 100;
+    position: absolute;  /* Заменяем на fixed, если хотите чтобы паучок был прилеплен на экране */
+    display: inline-block;
+    top: 0px; /*отступ сверху*/
+    left: 30px; /*отступ слева*/
+    /* 4. Animatie */
+    animation: swing 2s infinite;
+    transform-origin: top;
+    
+    /* Bonus */
+    transition: 1s ease-in-out;
+}
+
+.spider .spiderweb {
+    width: 2px;
+    height: 200px;  /* высота паутины, чем меньше число, тем она короче */
+    margin-left: 49px; /* двигаем паутину влево-вправо */
+    background: rgba(255,255,255, .7); /* цвет паутины */
+}
+
+.spider .body {
+    width: 100px;  /* ширина тела паука */
+    height: 80px; /* высота тела паука */
+    background: #000; /* цвет тела */
+    position: relative;
+    border-radius: 50%;
+}
+
+.spider .body .eye {
+    width: 33px; /* ширина глаз */
+    height: 33px; /* высота глаз */
+    position: absolute;
+    bottom: 20px;
+    background: #fff; /* цвет глаз */
+    border-radius: 50%;
+}
+
+.spider .body .eye.left {
+    left: 15px; /* изменить положение левого глаза */
+}
+
+.spider .body .eye.right {
+    right: 15px; /* изменить положение правого глаза */
+}
+
+.spider .body .eye:after {
+    background: #000; /* цвет зрачков */
+    width: 7px; /* ширина зрачка */
+    height: 7px; /* высота зрачка */
+    content: '';
+    display: block;
+    margin: 55%;
+    border-radius: 50%;
+
+    /* 3. Animatie */
+    animation: look 8s infinite;
+}
+
+.spider .legs .leg {
+    width: 80px; /* ширина лапок */
+    height: 40px; /* высота лапок */
+    margin-top: -20px; 
+    border: 5px solid transparent;
+    border-top-color: #000; /* цвет лапок */
+    border-radius: 40px 40px 0 0;
+}
+
+.spider .legs {
+    position: absolute;
+    bottom: -10%;
+    z-index: -1;
+}
+
+.spider .legs.left {
+    left: -70%; /* изменить положение лапок слева */
+}
+.spider .legs.right {
+    right: -60%; /* изменить положение лапок слева */
+}
+
+
+.legs.left .leg:nth-child(1){
+    transform: rotate(10deg);
+    margin-left: 10px;
+}
+.legs.right .leg:nth-child(1){
+    transform: rotate(-10deg);
+    margin-left: -10px;
+}
+
+
+.legs.left .leg:nth-child(2){
+    transform: rotate(-20deg);
+    margin-left: 20px;
+}
+.legs.right .leg:nth-child(2){
+    transform: rotate(20deg);
+    margin-left: -20px;
+}
+
+
+.legs.left .leg:nth-child(3){
+    transform: rotate(-50deg);
+    margin-left: 30px;
+}
+.legs.right .leg:nth-child(3){
+    transform: rotate(50deg);
+    margin-left: -30px;
+}
+
+/* 1. Animatie */
+@keyframes look {
+    0%, 40%, 100% {
+        transform: translateX(0); 
+    }
+
+    45%, 95% {
+        transform: translateX(-110%);
+    }
+}
+
+
+/* 3. Animatie */
+@keyframes swing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+   

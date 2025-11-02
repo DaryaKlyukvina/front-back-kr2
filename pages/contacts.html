@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Лихтина Дарья</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .halloween-cursor {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff7518" d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L9 19v3h6v-3h-1.69C18.16 18.67 21 15.17 21 11a9 9 0 0 0-9-9m0 2a7 7 0 0 1 7 7c0 3.1-2.03 5.74-4.94 6.66l.94.34V20h-6v-2l.94-.34A7.008 7.008 0 0 1 5 11a7 7 0 0 1 7-7m-3 8a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1m6 0a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1z"/></svg>'), auto;
+        }
+    </style>
+</head>
+<body class="bg-dark halloween-cursor">
+    <!-- Падающие элементы для фона -->
+    <div class="falling-elements-container"></div>
+
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1 spooky-animation glow-text">
+                            <i class="bi bi-telephone halloween-icon"></i>
+                            Контакты
+                        </h1>
+                        <p class="mb-0 opacity-75 flicker">Свяжитесь со мной</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-dark pulse-element">ЭФБО-05-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shake-element" href="diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active shake-element" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container my-4">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-8 mb-4 scroll-reveal">
+                    <div class="card shadow-sm glass-effect">
+                        <div class="card-header bg-light">
+                            <h2 class="card-title h5 mb-0 glow-text">
+                                <i class="bi bi-envelope text-primary"></i>
+                                Свяжитесь со мной
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Имя <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Тема</label>
+                                    <input type="text" class="form-control" id="subject">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Сообщение <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary pulse-element">Отправить сообщение</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <div class="card shadow-sm mb-4 glass-effect scroll-reveal">
+                        <div class="card-header bg-light">
+                            <h2 class="card-title h5 mb-0 glow-text">
+                                <i class="bi bi-info-circle text-primary"></i>
+                                Контактная информация
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-info mb-3">
+                                <p class="d-flex align-items-center">
+                                    <i class="bi bi-envelope-fill text-primary me-2 fs-5"></i> 
+                                    darya.likhtina@edu.ru
+                                </p>
+                                <p class="d-flex align-items-center">
+                                    <i class="bi bi-github text-primary me-2 fs-5"></i> 
+                                    GitHub: darya-likhtina
+                                </p>
+                                <p class="d-flex align-items-center">
+                                    <i class="bi bi-geo-alt-fill text-primary me-2 fs-5"></i> 
+                                    Москва, Россия
+                                </p>
+                                <p class="d-flex align-items-center">
+                                    <i class="bi bi-telephone-fill text-primary me-2 fs-5"></i> 
+                                    +7 (XXX) XXX-XX-XX
+                                </p>
+                                <p class="d-flex align-items-center">
+                                    <i class="bi bi-bookmark-check-fill text-primary me-2 fs-5"></i> 
+                                    Студентка ЭФБО-05-24
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm glass-effect scroll-reveal">
+                        <div class="card-header bg-light">
+                            <h2 class="card-title h5 mb-0 glow-text">
+                                <i class="bi bi-share text-primary"></i>
+                                Социальные сети
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex gap-3 justify-content-center">
+                                <a href="#" class="text-primary fs-4 shake-element">
+                                    <i class="bi bi-vk"></i>
+                                </a>
+                                <a href="#" class="text-primary fs-4 shake-element">
+                                    <i class="bi bi-telegram"></i>
+                                </a>
+                                <a href="#" class="text-primary fs-4 shake-element">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-primary fs-4 shake-element">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                            </div>
+                            <div class="text-center mt-3">
+                                <span class="twinkle">★</span>
+                                <span class="twinkle">★</span>
+                                <span class="twinkle">★</span>
+                                <span class="twinkle">★</span>
+                                <span class="twinkle">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Facts -->
+                    <div class="card shadow-sm mt-4 glass-effect scroll-reveal">
+                        <div class="card-header bg-light">
+                            <h2 class="card-title h5 mb-0 glow-text">
+                                <i class="bi bi-lightning-charge text-primary"></i>
+                                Быстрые факты
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-facts">
+                                <p class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Отвечаю в течение 24 часов
+                                </p>
+                                <p class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Готова к сотрудничеству
+                                </p>
+                                <p class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Открыта для новых проектов
+                                </p>
+                                <p class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Ищу интересные задачи
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2024 Портфолио Лихтиной Дарьи. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3 shake-element">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none shake-element">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Анимация появления элементов при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            // Функция для проверки видимости элемента
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Функция для обработки появления элементов
+            function handleScrollAnimation() {
+                const elements = document.querySelectorAll('.scroll-reveal');
+                
+                elements.forEach(element => {
+                    if (isElementInViewport(element)) {
+                        element.classList.add('revealed');
+                    }
+                });
+            }
+            
+            // Обработчик события скролла
+            window.addEventListener('scroll', handleScrollAnimation);
+            
+            // Проверяем элементы при загрузке страницы
+            handleScrollAnimation();
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Простая валидация формы
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // В реальном приложении здесь был бы AJAX-запрос к серверу
+                alert('Сообщение отправлено! Я свяжусь с вами в ближайшее время.');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Пожалуйста, заполните все обязательные поля!');
+            }
+        });
+
+        // Функция для создания падающих элементов
+        function createFallingElements() {
+            const container = document.querySelector('.falling-elements-container');
+            const symbols = ['❦', '✢', '✣', '✤', '✥', '✦', '✧', '♱', '♲', '♳', '♴', '♵'];
+            const count = 15;
+            
+            for (let i = 0; i < count; i++) {
+                const element = document.createElement('div');
+                element.className = 'falling-element';
+                element.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 20 + 's';
+                element.style.animationDuration = (15 + Math.random() * 10) + 's';
+                element.style.fontSize = (10 + Math.random() * 10) + 'px';
+                element.style.color = i % 3 === 0 ? 'var(--primary-color)' : 
+                                     i % 3 === 1 ? 'var(--secondary-color)' : 
+                                     'var(--accent-color)';
+                container.appendChild(element);
+            }
+        }
+
+        // Создаем падающие элементы после загрузки страницы
+        window.addEventListener('load', createFallingElements);
+
+        // Случайное мерцание элементов
+        function randomFlicker() {
+            const elements = document.querySelectorAll('.flicker');
+            elements.forEach(el => {
+                if (Math.random() > 0.7) {
+                    el.style.opacity = Math.random() * 0.5 + 0.5;
+                }
+            });
+        }
+
+        setInterval(randomFlicker, 300);
+    </script>
+</body>
+</html>
