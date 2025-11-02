@@ -97,6 +97,10 @@ body::before {
     box-shadow: 0 8px 16px rgba(255, 117, 24, 0.3);
 }
 
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
 .card-header {
     background-color: rgba(75, 0, 130, 0.3) !important;
     border-bottom: 1px solid var(--primary-color) !important;

@@ -7,10 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <style>
-        .halloween-cursor {
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff7518" d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L9 19v3h6v-3h-1.69C18.16 18.67 21 15.17 21 11a9 9 0 0 0-9-9m0 2a7 7 0 0 1 7 7c0 3.1-2.03 5.74-4.94 6.66l.94.34V20h-6v-2l.94-.34A7.008 7.008 0 0 1 5 11a7 7 0 0 1 7-7m-3 8a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1m6 0a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1z"/></svg>'), auto;
-        }
+    .halloween-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ffd700" d="M12 2C6 2 2 6 2 12s4 10 10 10 10-4 10-10S18 2 12 2zm0 2c4 0 8 4 8 8s-4 8-8 8-8-4-8-8 4-8 8-8z"/><path fill="%234b0082" d="M15 4C9 4 4 9 4 15s5 11 11 11 11-5 11-11S21 4 15 4z"/></svg>'), auto;
+}
     </style>
 </head>
 <body class="bg-dark halloween-cursor">
@@ -248,7 +249,7 @@
                 </div>
             </section>
 
-            <!-- Goals Section -->
+            <!-- Цели -->
             <section class="mb-5 scroll-reveal">
                 <div class="card shadow-sm glass-effect">
                     <div class="card-header bg-light">
@@ -327,7 +328,6 @@
         </footer>
     </div>
 
-    <!-- Add Entry Modal -->
     <div class="modal fade" id="addEntryModal" tabindex="-1" aria-labelledby="addEntryModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content glass-effect">
@@ -400,21 +400,124 @@
         });
 
         function addDiaryEntry() {
-            const date = document.getElementById('entryDate').value;
-            const title = document.getElementById('entryTitle').value;
-            const description = document.getElementById('entryDescription').value;
-            const status = document.getElementById('entryStatus').value;
-            
-            if (date && title && description && status) {
-                // В реальном приложении здесь был бы AJAX-запрос к серверу
-                alert('Запись успешно добавлена!');
-                document.getElementById('diaryForm').reset();
-                const modal = bootstrap.Modal.getInstance(document.getElementById('addEntryModal'));
-                modal.hide();
-            } else {
-                alert('Пожалуйста, заполните все поля!');
+    const date = document.getElementById('entryDate').value;
+    const title = document.getElementById('entryTitle').value;
+    const description = document.getElementById('entryDescription').value;
+    const status = document.getElementById('entryStatus').value;
+    
+    if (date && title && description && status) {
+        // Создаем новую запись
+        createDiaryEntry(date, title, description, status);
+        
+        // Закрываем модальное окно
+        const modal = bootstrap.Modal.getInstance(document.getElementById('addEntryModal'));
+        modal.hide();
+        
+        // Очищаем форму
+        document.getElementById('diaryForm').reset();
+        
+        // Показываем уведомление об успехе
+        showDiaryNotification('success', 'Запись успешно добавлена!');
+    } else {
+        showDiaryNotification('error', 'Пожалуйста, заполните все поля!');
+    }
+}
+
+function createDiaryEntry(date, title, description, status) {
+    const diaryList = document.querySelector('.diary-list');
+    
+    // Создаем HTML для новой записи
+    const diaryItem = document.createElement('div');
+    diaryItem.className = `diary-item ${status === 'completed' ? 'completed' : status === 'in-progress' ? 'in-progress' : ''} ghost-appear`;
+    
+    // Форматируем дату
+    const formattedDate = formatDate(date);
+    
+    // Определяем иконку статуса и текст
+    let statusBadge = '';
+    let stars = '';
+    
+    switch(status) {
+        case 'completed':
+            statusBadge = '<span class="badge bg-success pulse-element">Завершено</span>';
+            stars = '<span class="twinkle">★</span>'.repeat(5);
+            break;
+        case 'in-progress':
+            statusBadge = '<span class="badge bg-warning flicker">В процессе</span>';
+            stars = '<span class="twinkle">★</span>'.repeat(3);
+            break;
+        default:
+            statusBadge = '<span class="badge bg-secondary">Запланировано</span>';
+            stars = '<span class="twinkle">★</span>'.repeat(1);
+    }
+    
+    diaryItem.innerHTML = `
+        <h5 class="text-primary">${formattedDate} - ${title}</h5>
+        <p class="text-muted">${description}</p>
+        ${statusBadge}
+        <div class="mt-2">${stars}</div>
+    `;
+    
+    // Добавляем новую запись в начало списка
+    diaryList.insertBefore(diaryItem, diaryList.firstChild);
+    
+    // Добавляем анимацию появления
+    setTimeout(() => {
+        diaryItem.classList.add('revealed');
+    }, 100);
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString('ru-RU', { month: 'short' });
+    return `${day} ${month}`;
+}
+
+function showDiaryNotification(type, message) {
+    const icon = type === 'success' ? 
+        'bi-check-circle-fill text-success' : 
+        'bi-exclamation-circle-fill text-danger';
+    
+    const borderColor = type === 'success' ? 
+        'var(--success-color)' : 
+        'var(--accent-color)';
+    
+    const notification = document.createElement('div');
+    notification.className = 'diary-notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="bi ${icon} me-2"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--dark-color);
+        color: var(--text-color);
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid ${borderColor};
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 10000;
+        animation: slideInRight 0.3s ease-out;
+        max-width: 300px;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease-in forwards';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
             }
-        }
+        }, 300);
+    }, 3000);
+}
 
         // Функция для создания падающих элементов
         function createFallingElements() {

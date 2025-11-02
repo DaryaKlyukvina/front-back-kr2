@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <style>
-        /* Дополнительные инлайновые стили для анимаций */
-        .halloween-cursor {
+    .halloween-cursor {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ffd700" d="M12 2C6 2 2 6 2 12s4 10 10 10 10-4 10-10S18 2 12 2zm0 2c4 0 8 4 8 8s-4 8-8 8-8-4-8-8 4-8 8-8z"/><path fill="%234b0082" d="M15 4C9 4 4 9 4 15s5 11 11 11 11-5 11-11S21 4 15 4z"/></svg>'), auto;
 }
     </style>
 </head>
 <body class="bg-dark halloween-cursor">
+    <!-- Паучок который появляется при отсутствии курсора -->
     <div class="spider">
         <div class="spiderweb"></div>
         <div class="body">
@@ -33,12 +33,11 @@
             <div class="leg"></div>
         </div>
     </div>
-    
+    <!-- Танцующий скелет -->
     <div class="dance"></div>
     <!-- Падающие элементы для фона -->
     <div class="falling-elements-container"></div>
 
-    <div class="container-fluid p-0">
         <!-- Header -->
         <header class="bg-primary text-white py-4">
             <div class="container">
@@ -90,9 +89,9 @@
             </div>
         </nav>
 
-        <!-- Main Content -->
+        <!-- Содержание сайта -->
         <main class="container my-4">
-            <!-- Profile Section -->
+            <!-- Портфолио кратко -->
             <section class="mb-5 profile-section scroll-reveal">
                 <div class="card shadow-sm breathing-card glass-effect">
                     <div class="card-body p-4">
@@ -121,8 +120,8 @@
                                     <span class="badge bg-warning">React</span>
                                     <span class="badge bg-secondary">UI/UX Design</span>
                                 </div>
-                                <button class="btn btn-primary mt-3 download-btn pulse-element">
-                                    <i class="bi bi-download me-1"></i>Скачать резюме
+                                <button class="btn btn-primary mt-3 download-btn pulse-element" onclick="downloadPortfolio()">
+                                    <i class="bi bi-download me-1"></i>Скачать портфолио
                                 </button>
                             </div>
                         </div>
@@ -396,27 +395,6 @@
                 });
             });
             
-            // Анимация для кнопки "Скачать резюме"
-            const downloadBtn = document.querySelector('.download-btn');
-            if (downloadBtn) {
-                downloadBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    this.classList.add('pulse-element');
-                    
-                    // Эффект "исчезания" текста
-                    const originalText = this.innerHTML;
-                    this.innerHTML = '<i class="bi bi-download me-1"></i>Скачивание...';
-                    this.classList.add('vanish-text');
-                    
-                    setTimeout(() => {
-                        this.classList.remove('pulse-element', 'vanish-text');
-                        this.innerHTML = originalText;
-                        
-                        // В реальном приложении здесь была бы загрузка файла
-                        alert('Резюме скоро начнет скачиваться!');
-                    }, 2000);
-                });
-            }
             
             // Добавляем эффект наведения на карточки проектов
             const projectCards = document.querySelectorAll('.project-card');
@@ -493,5 +471,99 @@
 
         setInterval(randomFlicker, 300);
     </script>
+
+    <script>
+function downloadPortfolio() {
+    // Путь к файлу портфолио
+    const fileUrl = 'assets/portfolio.pdf';
+    const fileName = 'Портфолио_Лихтина_Дарья.pdf';
+    
+    // Создаем временную ссылку для скачивания
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileName;
+    
+    // Добавляем ссылку в DOM, кликаем и удаляем
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Показываем уведомление об успешном скачивании
+    showDownloadNotification();
+}
+
+function showDownloadNotification() {
+    // Создаем красивое уведомление
+    const notification = document.createElement('div');
+    notification.className = 'download-notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="bi bi-check-circle-fill text-success me-2"></i>
+            <span>Портфолио начинает скачиваться!</span>
+        </div>
+    `;
+    
+    // Стили для уведомления
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--dark-color);
+        color: var(--text-color);
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid var(--success-color);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 10000;
+        animation: slideInRight 0.3s ease-out;
+        max-width: 300px;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Удаляем уведомление через 3 секунды
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease-in forwards';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Анимации для уведомления
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    
+    .notification-content {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+    }
+`;
+document.head.appendChild(style);
+</script>
 </body>
 </html>
