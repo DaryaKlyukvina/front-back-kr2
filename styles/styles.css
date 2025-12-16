@@ -185,6 +185,7 @@ body::before {
 
 /* Фото профиля */
 .profile-photo {
+    inline-size: clamp(150px, 22vw, 200px);
     width: 150px;
     height: 150px;
     object-fit: cover;
