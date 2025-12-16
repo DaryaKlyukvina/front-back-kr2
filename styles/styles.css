@@ -411,8 +411,9 @@ body::before {
 
 /* Фон для навигации */
 .navbar {
-    /* МЕСТО ДЛЯ ФОНА НАВИГАЦИИ */
-    /* background-image: url('../images/nav-bg.jpg'); */
+    position: sticky;
+    top: 0;
+    z-index: 99;
     background-size: cover;
 }
 
