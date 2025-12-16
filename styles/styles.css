@@ -1,7 +1,7 @@
 /* === CSS ПЕРЕМЕННЫЕ ДЛЯ ХЭЛЛОУИНСКОЙ ТЕМЫ === */
 :root {
     /* Хэллоуинская цветовая палитра */
-    --primary-color: #622e88; /* оранжевый */
+    --primary-color: #e16411; /* оранжевый */
     --secondary-color: #4b0082; /* фиолетовый */
     --accent-color: #bb3301; /* красно-оранжевый */
     --dark-color: #1a1a1a;
@@ -52,7 +52,7 @@ body::before {
 
 /* Цвета фона */
 .bg-primary {
-    background-color: var(--primary-color) !important;
+    background-color: var(--secondary-color) !important;
 }
 
 .bg-dark {
@@ -74,9 +74,9 @@ body::before {
 
 /* Кнопки */
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    transition: var(--transition);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transition: var(--secondary-color);
 }
 
 .btn-primary:hover {
@@ -518,16 +518,16 @@ body::before {
 /* 2. Анимация свечения для заголовков */
 @keyframes glow {
     0%, 100% {
-        text-shadow: 0 0 5px var(--primary-color), 
-                     0 0 10px var(--primary-color), 
-                     0 0 15px var(--primary-color),
-                     0 0 20px var(--accent-color);
+        text-shadow: 0 0 5px var(--dark-color), 
+                     0 0 10px var(--dark-color), 
+                     0 0 15px var(---dark-color),
+                     0 0 20px var(--dark-color);
     }
     50% {
-        text-shadow: 0 0 10px var(--accent-color), 
-                     0 0 20px var(--accent-color), 
-                     0 0 30px var(--accent-color),
-                     0 0 40px var(--primary-color);
+        text-shadow: 0 0 10px var(--dark-color), 
+                     0 0 20px var(--dark-color), 
+                     0 0 30px var(--dark-color),
+                     0 0 40px var(--dark-color);
     }
 }
 
