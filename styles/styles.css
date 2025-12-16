@@ -3,11 +3,11 @@
     /* Хэллоуинская цветовая палитра */
     --primary-color: #ff7518; /* оранжевый */
     --secondary-color: #4b0082; /* фиолетовый */
-    --accent-color: #ff4500; /* красно-оранжевый */
+    --accent-color: #bb3301; /* красно-оранжевый */
     --dark-color: #1a1a1a;
     --darker-color: #0d0d0d;
     --light-color: #f8f9fa;
-    --success-color: #32cd32; /* зеленый для Хэллоуина */
+    --success-color: #1c6d1c; /* зеленый для Хэллоуина */
     --text-color: #f8f8f8; /* Более светлый текст для лучшей читаемости */
     --text-muted: #d0d0d0; /* Более светлый muted текст */
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -42,6 +42,10 @@ body::before {
     height: 100%;
     background: rgba(13, 13, 13, 0.85); /* Затемнение для контраста с текстом */
     z-index: -1;
+}
+
+.headname{
+    color: #ffffff !important;
 }
 
 /* === КАСТОМНЫЕ СТИЛИ ДЛЯ BOOTSTRAP === */
@@ -131,7 +135,7 @@ body::before {
 
 /* Бейджи */
 .badge.bg-primary {
-    background-color: var(--primary-color) !important;
+    background-color: var(--accent-color) !important;
 }
 
 .badge.bg-success {
