@@ -202,6 +202,11 @@ body::before {
     /* border: 2px solid var(--primary-color); */
 }
 
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+}
+
 /* Карточки проектов */
 .project-card {
     transition: var(--transition);
