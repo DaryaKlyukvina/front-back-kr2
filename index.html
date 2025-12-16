@@ -98,8 +98,16 @@
                     <div class="card-body p-4">
                         <div class="row align-items-center">
                             <div class="col-md-3 text-center mb-3 mb-md-0">
-                                <img src="images/photo.png" alt="Фото студента" class="img-fluid rounded-circle profile-photo hover-tilt">
-                                <div class="mt-3">
+                                <picture>
+                <source type="image/avif" srcset="./images/hero-300.avif" media="(min-width: 900px)">
+                <source type="image/avif" srcset="./images/hero-200.avif" media="(min-width: 401px)">
+                <source type="image/avif" srcset="./images/hero-150.avif" media="(max-width: 400px)">
+
+                <source type="image/webp" srcset="./images/hero-300.webp" media="(min-width: 900px)">
+                <source type="image/webp" srcset="./images/hero-200.webp" media="(min-width: 401px)">
+                <source type="image/webp" srcset="./images/hero-150.webp" media="(max-width: 400px)">
+<img src="images/photo.png" alt="Фото студента" class="img-fluid rounded-circle profile-photo hover-tilt" fetchpriority="high">
+            </picture>
                                     <span class="twinkle">★</span>
                                     <span class="twinkle">★</span>
                                     <span class="twinkle">★</span>
