@@ -108,22 +108,16 @@ body::before {
 .card-header {
     background-color: rgba(75, 0, 130, 0.3) !important;
     border-bottom: 1px solid var(--primary-color) !important;
-    /* МЕСТО ДЛЯ ТЕКСТУРЫ ЗАГОЛОВКА КАРТОЧКИ */
-    /* background-image: url('../images/header-texture.png'); */
     background-blend-mode: overlay;
 }
 
 /* Прогресс-бары */
 .progress {
     background-color: var(--darker-color);
-    /* МЕСТО ДЛЯ ТЕКСТУРЫ ПРОГРЕСС-БАРА */
-    /* background-image: url('../images/progress-bg.png'); */
 }
 
 .progress-bar {
     background-color: var(--primary-color);
-    /* МЕСТО ДЛЯ ТЕКСТУРЫ ЗАПОЛНЕННОЙ ЧАСТИ ПРОГРЕСС-БАРА */
-    /* background-image: url('../images/progress-fill.png'); */
     background-size: 20px 100%;
     animation: progress-animation 1s infinite linear;
 }
@@ -154,8 +148,6 @@ body::before {
 .navbar-dark .navbar-nav .nav-link {
     color: var(--text-color);
     transition: var(--transition);
-    /* МЕСТО ДЛЯ ФОНА ПУНКТОВ НАВИГАЦИИ */
-    /* background-image: url('../images/nav-item-bg.png'); */
     background-size: cover;
 }
 
@@ -163,8 +155,6 @@ body::before {
 .navbar-dark .navbar-nav .nav-link.active {
     color: var(--primary-color);
     transform: translateY(-2px);
-    /* МЕСТО ДЛЯ ИЗМЕНЕНИЯ ФОНА ПРИ НАВЕДЕНИИ */
-    /* background-image: url('../images/nav-item-hover.png'); */
 }
 
 /* === КАСТОМНЫЕ КОМПОНЕНТЫ === */
@@ -705,33 +695,7 @@ body::before {
     animation: float 3s ease-in-out infinite;
 }
 
-/* 13. Эффект типа на печатной машинке */
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-.typewriter-text {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid var(--primary-color);
-    animation: typewriter 3s steps(40) 1s both, blink 0.75s step-end infinite;
-}
-
-@keyframes blink {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: var(--primary-color);
-    }
-}
-
-/* 14. Анимация "мерцающих звезд" на фоне */
+/* 13. Анимация "мерцающих звезд" на фоне */
 @keyframes twinkle {
     0%, 100% {
         opacity: 0.2;
@@ -755,17 +719,6 @@ body::before {
     animation-delay: 1s;
 }
 
-/* 15. Эффект параллакса для фоновых элементов */
-.parallax-bg {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* === ПРИМЕНЕНИЕ АНИМАЦИЙ К КОНКРЕТНЫМ ЭЛЕМЕНТАМ === */
-
-/* Применяем анимацию появления к основным секциям */
 .profile-section, .skills-section, .projects-section, .diary-section, .contacts-section {
     opacity: 0;
     transform: translateY(30px);
@@ -860,25 +813,6 @@ body::before {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Анимированный градиент для фона */
-.animated-bg {
-    background: linear-gradient(-45deg, var(--darker-color), var(--dark-color), var(--secondary-color), var(--primary-color));
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 /* Стили для ховер-эффектов с трансформацией */
 .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -963,18 +897,6 @@ body::before {
     border-radius: 12px;
     z-index: -1;
     animation: colorShift 5s infinite;
-}
-
-@keyframes colorShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .skip-link{
